@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 def calculate_version():
     initpy = open('MarkovNetwork/_version.py').read().split('\n')
-    version = list(filter(lambda x: '__version__' in x, initpy))[0].split('\'')[1]
+    version = list([x for x in initpy if '__version__' in x])[0].split('\'')[1]
     return version
 
 package_version = calculate_version()
